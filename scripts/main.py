@@ -12,7 +12,7 @@ import sys
 
 if sys.argv[1] == "GET":
     print(GET(sys.argv[2]))
-elif sys.argv[2] == "POST":
+elif sys.argv[1] == "POST":
     print(POST())
 else:
     print("ERRO: " + sys.argv[1] + "nao reconhecido. Use GET ou POST.")
