@@ -5,7 +5,7 @@ from util import POST_GenData
 def GET(id):
     try:
         # monta a url correta com o id de usuário fornecido para fazer a consulta
-        url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/hirers/" + str(id) + "/opportunities"
+        url = "http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/hirers/" + str(id) + "/opportunities"
         response = requests.get(url)
         data = response.json()
         # imprime no console o número de entradas para o usuário, sendo cada entrada uma vaga
@@ -20,7 +20,8 @@ def GET(id):
 
 def POST():
     # monta a url correta com o id de usuário fornecido para fazer a consulta
-    url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/opportunities"
+    url = "http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/opportunities"
     data = POST_GenData()
     request = requests.post(url, json=data)
+    # imprime no console o código de retorno do post. Um post feito com sucesso retorna 201.
     return (request.status_code, request.reason)
